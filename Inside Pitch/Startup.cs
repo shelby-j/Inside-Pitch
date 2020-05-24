@@ -31,7 +31,8 @@ namespace Inside_Pitch
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<DataBaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DataBaseContext")));
+            services.AddDbContext<DataBaseContext>(options => 
+              options.UseSqlServer("Server=DESKTOP-E3G10IS\\SQLEXPRESS;Database=UserDatabase;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
         }
 
