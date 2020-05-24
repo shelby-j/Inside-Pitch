@@ -11,6 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Inside_Pitch
 {
@@ -27,6 +30,9 @@ namespace Inside_Pitch
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<DataBaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DataBaseContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

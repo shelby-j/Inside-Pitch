@@ -13,5 +13,7 @@ namespace Inside_Pitch.Models
         {
 
         }
+        public DbSet<Inside_Pitch.Models.RegisterViewModel> RegisterViewModel { get; set; }
+
     }
 }
